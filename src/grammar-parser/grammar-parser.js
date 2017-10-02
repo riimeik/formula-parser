@@ -366,7 +366,6 @@ parse: function parse(input) {
         lstack.length = lstack.length - n;
     }
 
-_token_stack:
     var lex = function () {
         var token;
         token = lexer.lex() || EOF;
@@ -393,7 +392,6 @@ _token_stack:
             action = table[state] && table[state][symbol];
         }
 
-_handle_error:
         // handle parse error
         if (typeof action === 'undefined' || !action.length || !action[0]) {
             var error_rule_depth;
@@ -982,6 +980,7 @@ return new Parser;
 
 
 if (typeof require !== 'undefined' && typeof exports !== 'undefined') {
+<<<<<<< HEAD
 exports.parser = parser;
 exports.Parser = parser.Parser;
 exports.parse = function () { return parser.parse.apply(parser, arguments); };
@@ -993,6 +992,11 @@ exports.main = function commonjsMain(args) {
     var source = require('fs').readFileSync(require('path').normalize(args[1]), "utf8");
     return exports.parser.parse(source);
 };
+=======
+exports.parser = grammarParser;
+exports.Parser = grammarParser.Parser;
+exports.parse = function () { return grammarParser.parse.apply(grammarParser, arguments); };
+>>>>>>> upstream/master
 if (typeof module !== 'undefined' && require.main === module) {
   exports.main(process.argv.slice(1));
 }

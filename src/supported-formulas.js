@@ -108,6 +108,7 @@ const SUPPORTED_FORMULAS = [
   'ERFC',
   'EVEN',
   'EXACT',
+  'EXP',
   'EXPON.DIST',
   'EXPONDIST',
   'F.DIST',
@@ -393,4 +394,4 @@ const SUPPORTED_FORMULAS = [
   'IFERROR'
 ];
 
-export {SUPPORTED_FORMULAS as default};
+export default SUPPORTED_FORMULAS;
