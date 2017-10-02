@@ -980,7 +980,6 @@ return new Parser;
 
 
 if (typeof require !== 'undefined' && typeof exports !== 'undefined') {
-<<<<<<< HEAD
 exports.parser = parser;
 exports.Parser = parser.Parser;
 exports.parse = function () { return parser.parse.apply(parser, arguments); };
@@ -992,11 +991,6 @@ exports.main = function commonjsMain(args) {
     var source = require('fs').readFileSync(require('path').normalize(args[1]), "utf8");
     return exports.parser.parse(source);
 };
-=======
-exports.parser = grammarParser;
-exports.Parser = grammarParser.Parser;
-exports.parse = function () { return grammarParser.parse.apply(grammarParser, arguments); };
->>>>>>> upstream/master
 if (typeof module !== 'undefined' && require.main === module) {
   exports.main(process.argv.slice(1));
 }
